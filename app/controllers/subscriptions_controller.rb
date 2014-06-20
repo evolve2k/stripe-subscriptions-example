@@ -3,12 +3,7 @@ class SubscriptionsController < ApplicationController
   layout 'subscriptions'
 
   def new
-  	@current_user ||= User.first
-  	if @current_user
 			@subscription = Subscription.new
-		else
-			redirect_to new_user_session_path
-		end
   end
 
   def create
