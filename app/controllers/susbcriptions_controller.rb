@@ -1,2 +1,0 @@
-class SusbcriptionsController < ApplicationController
-end
