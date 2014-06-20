@@ -25,4 +25,5 @@ $(document).ready ->
     false
     # this is optional, just for demonstational purposes that it is working.. remove it and the form will get submited
     # here should be some statement for validation of some sort but this is up to you!
-    # 
+    # This next line will help you test just generating the stripe token, it prevents the form triggering its submit.
+    # e.preventDefault()

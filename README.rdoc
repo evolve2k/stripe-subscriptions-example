@@ -1,8 +1,11 @@
 An example project to test stripe setup
 
+Prerequisites
+-------------
+You will need a stripe account. Set one up at http://stripe.com
+
 Installation
 ------------
-
-1. Replace the test keys stripe keys with your own. (config/initializers/stripe.rb)
+1. Replace the test stripe keys with your own. (config/initializers/stripe.rb)
 2. $ bundle
 3. $ rake db:migrate

@@ -4,15 +4,13 @@ class SubscriptionsController < ApplicationController
   respond_to :html, :json
 
   def index
-
   end
 
  	def show
-
  	end
 
   def new
-   @subscription = Subscription.new
+   	@subscription = Subscription.new
   end
 
   def create
@@ -22,13 +20,13 @@ class SubscriptionsController < ApplicationController
   end
 
 private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subscription
-      @subscription = Subscription.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def subscription_params
-      params.require(:subscription).permit(:user_id, :payment_plan_id, :stripe_customer_token)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subscription
+    @subscription = Subscription.find(params[:id])
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def subscription_params
+    params.require(:subscription).permit(:user_id, :payment_plan_id, :stripe_customer_token)
+  end
+end
