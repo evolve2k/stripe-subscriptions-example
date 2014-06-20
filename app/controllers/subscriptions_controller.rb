@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-	before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  before_action :set_subscription, only: [:show, :edit, :update, :destroy]
   layout 'subscriptions'
   respond_to :html, :json
 
@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
  	end
 
   def new
-			@subscription = Subscription.new
+   @subscription = Subscription.new
   end
 
   def create
@@ -31,4 +31,4 @@ private
     def subscription_params
       params.require(:subscription).permit(:user_id, :payment_plan_id, :stripe_customer_token)
     end
-end
+  end
