@@ -1,20 +1,23 @@
 class SubscriptionsController < ApplicationController
-	before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  before_action :set_subscription, only: [:show, :edit, :update, :destroy]
   layout 'subscriptions'
 
   def new
-			@subscription = Subscription.new
+   @subscription = Subscription.new
   end
 
   def create
-  	@subscription = Subscription.new(subscription_params)
-		if @subscription.save
-			format.html { redirect_to new_project_path, notice: 'Subscription was successfully created.' }
-      format.json { render action: 'show', status: :created, location: @subscription }
-    else
-      format.html { render action: 'new' }
-      format.json { render json: @subscription.errors, status: :unprocessable_entity }
-    end
+    @subscription = Subscription.new(subscription_params)
+
+     respond_to do |format|
+       if @subscription.save
+         format.html { redirect_to new_project_path, notice: 'Subscription was successfully created.' }
+         format.json { render action: 'show', status: :created, location: @subscription }
+       else
+         format.html { render action: 'new' }
+         format.json { render json: @subscription.errors, status: :unprocessable_entity }
+       end
+     end
   end
 
 private
@@ -27,4 +30,4 @@ private
     def subscription_params
       params.require(:subscription).permit(:user_ud, :payment_plan_id)
     end
-end
+  end
