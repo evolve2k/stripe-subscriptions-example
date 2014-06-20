@@ -5,7 +5,7 @@ StripeSubscriptionsExample::Application.routes.draw do
   resource :subscriptions
 
   # You can have the root of your site routed with "root"
-  root 'subscription#new'
+  root 'subscriptions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
