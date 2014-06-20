@@ -5,7 +5,7 @@ stripeResponseHandler = (status, response) ->
   else  
     console.log("Stripe token has been generated #{response['id']}")
     # create a hidden input that will push the token to the server
-    $("#payment-form").append "<input type='hidden' name='stripeToken' value='#{response['id']}'/>"
+    $("#payment-form").append "<input type='hidden' name='subscription[stripe_customer_token]' value='#{response['id']}'/>"
     $("#payment-form")[0].submit();
 
 $(document).ready ->
