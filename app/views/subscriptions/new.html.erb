@@ -1,6 +1,12 @@
 <% current_user_id = 1 %>
 <% current_user_email = "test@mailinator.com" %>
 
+<span class="test">
+  <em>During testing use the credit card:</em> 
+    <code>5555555555554444</code><em>, set expiry into the future and use any other deets you like.
+  </em>
+</span>
+
 <div id="new_subscription">
   <%= form_for @subscription, html: {id: 'payment-form', class: 'form-horizontal'} do |f| %>
     <%= f.hidden_field :payment_plan_id, value: 'basic' %>
@@ -33,15 +39,6 @@
           <div class="row">
             <div id="card-number" class="field">
               <%= label_tag :card_number, "Credit Card Number " %>
-
-              <!-- to be deleted after testing -->
-              <span class="test">
-                <em>During testing use the credit card</em> 
-                  <code>5555555555554444</code><em> and any other deets you like.
-                </em>
-              </span>
-              <!-- end delete -->
-
               <br>
               <%= text_field_tag :card_number, nil, name: nil,autocomplete: 'off' %>
               <span id="card-type">
