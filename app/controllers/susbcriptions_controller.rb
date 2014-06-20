@@ -1,0 +1,2 @@
+class SusbcriptionsController < ApplicationController
+end
